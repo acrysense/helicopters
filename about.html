@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Полёт - О нас</title>
+	<!-- styles -->
+	<link rel="stylesheet" href="css/vendor.min.css">
+	<link rel="stylesheet" href="css/app.min.css">
+</head>
+
+<body>
+	<!-- header -->
+	<header class="header @@header" id="header" data-aos="fade-in">
+		<div class="container">
+			<div class="header__wrapper">
+				<button class="hamburger" id="hamburger-toggle" aria-label="Меню">
+					<span class="hamburger__inner"></span>
+					<span class="hamburger__inner"></span>
+					<span class="hamburger__inner"></span>
+				</button>
+				<a href="index.html" class="header__logotype">
+					<picture>
+						<source srcset="img/logotype.svg" media="(min-width: 1024px)">
+						<img src="img/logotype-mobile.svg" alt="ПОЛЁТ">
+					</picture>
+				</a>
+				<nav class="nav header__nav">
+					<ul class="nav__list">
+						<li class="nav__item @@main">
+							<a href="index.html" class="nav__link">Главная</a>
+						</li>
+						<li class="nav__item @@services">
+							<a href="services.html" class="nav__link">Услуги</a>
+						</li>
+						<li class="nav__item @@routes">
+							<a href="routes.html" class="nav__link">Маршруты</a>
+						</li>
+						<li class="nav__item nav__item--active">
+							<a href="about.html" class="nav__link">О нас</a>
+						</li>
+					</ul>
+				</nav>
+				<a href="tel:89633372222" class="header__number">
+					<svg class="header__number-icon">
+						<use xlink:href="img/sprite.svg#icon-phone-call"></use>
+					</svg>
+					<span class="header__number-title">8 (963) 337-22-22</span>
+				</a>
+			</div>
+		</div>
+	</header>
+	<!-- end of header -->
+	<!-- wrapper -->
+	<div class="wrapper">
+		<!-- page top -->
+		<div class="page-top" id="page-top">
+			<div class="container">
+				<div class="page-top__wrapper">
+					<picture class="page-top__img">
+						<img src="img/main-bg.jpg" alt="Image">
+					</picture>
+					<h2 class="page-top__title">О нас</h2>
+					<a href="#about" class="back-to page-top__back">
+						<span class="back-to__title">Загляните <br>за горизонт</span>
+						<svg class="back-to__icon">
+							<use xlink:href="img/sprite.svg#icon-arrow-bottom"></use>
+						</svg>
+					</a>
+				</div>
+			</div>
+		</div>
+		<!-- end of page top -->
+		<!-- about -->
+		<section class="about" id="about">
+			<div class="container">
+				<div class="about__wrapper">
+					<div class="about__left">
+						<h3 class="about__title"><b>История компании</b></h3>
+						<p class="about__description">
+							Полет на вертолете - это увлекательный отдых и прекрасный способ <br>
+							не только получить необычные ощущения иэмоции, a еще и запомнить республику в ее лучших проявлениях и побывать у в уникальных местах, недоступных большинству путешественников
+							<br><br>
+							Любое мероприятие – свидание, экскурсия, корпоратив, день рождения или просто семейная прогулка – станут уникальными <br>
+							и подарят море эмоций.
+							<br><br>
+							Полет на вертолете - это увлекательный отдых и прекрасный способ <br>
+							не только получить необычные ощущения иэмоции, a еще и запомнить республику в ее лучших проявлениях и побывать у в уникальных местах, недоступных большинству путешественников
+						</p>
+						<a href="#" class="about__btn btn">Напишите нам</a>
+					</div>
+					<div class="about__right">
+						<div class="about__images">
+							<picture class="about__img">
+								<img src="img/about-img-01.jpg" alt="Image">
+							</picture>
+							<picture class="about__img">
+								<img src="img/about-img-02.jpg" alt="Image">
+							</picture>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- end of about -->
+		<!-- feedback -->
+		<section class="feedback" id="feedback">
+			<div class="container">
+				<div class="feedback__wrapper">
+					<h2 class="feedback__title">Отправляйтесь за горизонт на комфортном вертолете </h2>
+					<p class="feedback__description">Оставьте свои данные, мы свяжемся с вами и обсудим все детали </p>
+					<form action="#" class="feedback-form feedback__form">
+						<div class="feedback-form__inner">
+							<input type="text" class="feedback-form__input input" placeholder="Ваше имя">
+							<input type="tel" class="feedback-form__input input" placeholder="Номер телефона">
+						</div>
+						<div class="feedback-form__inner">
+							<textarea class="feedback-form__input textarea" placeholder="Ваше сообщение"></textarea>
+						</div>
+						<div class="feedback-form__bottom">
+							<p class="feedback-form__copyright">Нажимая кнопку «отправить», вы принимаете <a href="#">условия передачи персональных данных</a> и нашу <a href="#">политику конфиденциальности</a></p>
+							<button class="feedback-form__btn btn">Отправить</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</section>
+		<!-- end of feedback -->
+		<!-- footer -->
+		<footer class="footer" id="footer">
+			<div class="container">
+				<div class="footer__wrapper">
+					<div class="footer__block">
+						<span class="footer__help">Email</span>
+						<a href="#" class="footer__link">polet.travelcompany@gmail.com</a>
+					</div>
+					<div class="footer__block">
+						<span class="footer__help">Телефон</span>
+						<a href="tel:89633372222" class="footer__link">8 (963) 337-22-22</a>
+					</div>
+					<div class="footer__block">
+						<span class="footer__help">Адрес</span>
+						<address class="footer__link">Дагестан, Махачкала, д.1 офис 1</address>
+					</div>
+					<a href="#header" class="back-to footer__back">
+						<span class="back-to__title">Вернуться наверх</span>
+						<svg class="back-to__icon">
+							<use xlink:href="img/sprite.svg#icon-arrow-top"></use>
+						</svg>
+					</a>
+				</div>
+				<div class="footer__wrapper footer__wrapper--bottom">
+					<div class="footer__block">
+						<p class="footer__copyright">© Полет 2022 | Все права защищены</p>
+					</div>
+					<div class="footer__block">
+						<a href="#" class="footer__info">Политика конфиденциальности</a>
+					</div>
+					<div class="footer__block">
+						<div class="c-socials footer__socials">
+							<ul class="c-socials__list">
+								<li class="c-socials__item">
+									<a href="#" class="c-socials__link">
+										<svg class="c-socials__icon">
+											<use xlink:href="img/sprite.svg#icon-telegram"></use>
+										</svg>
+									</a>
+								</li>
+								<li class="c-socials__item">
+									<a href="#" class="c-socials__link">
+										<svg class="c-socials__icon">
+											<use xlink:href="img/sprite.svg#icon-vk"></use>
+										</svg>
+									</a>
+								</li>
+								<li class="c-socials__item">
+									<a href="#" class="c-socials__link">
+										<svg class="c-socials__icon">
+											<use xlink:href="img/sprite.svg#icon-instagram"></use>
+										</svg>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- end of footer -->
+	</div>
+	<!-- end of wrapper -->
+	<!-- scripts -->
+	<script src="js/vendor.min.js"></script>
+	<script src="js/app.min.js"></script>
+</body>
+
+</html>
