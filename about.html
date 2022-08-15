@@ -146,6 +146,100 @@
 			</div>
 		</section>
 		<!-- end of fleet -->
+		<!-- gallery -->
+		<section class="gallery" id="gallery">
+			<div class="container">
+				<div class="gallery__top">
+					<div class="section-heading">
+						<h2 class="section-heading__title">Наша аккаунт <br>в Instagram</h2>
+					</div>
+					<a href="#" class="back-to gallery__back" target="_blank">
+						<span class="back-to__title">Открыть <br>в Instagram</span>
+						<svg class="back-to__icon">
+							<use xlink:href="img/sprite.svg#icon-arrow-bottom"></use>
+						</svg>
+					</a>
+				</div>
+				<div class="gallery__slider gallery__slider--top">
+					<div class="swiper">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<picture class="gallery__img">
+									<img src="img/gallery-01.jpg" alt="Image">
+								</picture>
+							</div>
+							<div class="swiper-slide">
+								<picture class="gallery__img">
+									<img src="img/gallery-02.jpg" alt="Image">
+								</picture>
+							</div>
+							<div class="swiper-slide">
+								<picture class="gallery__img">
+									<img src="img/gallery-03.jpg" alt="Image">
+								</picture>
+							</div>
+							<div class="swiper-slide">
+								<picture class="gallery__img">
+									<img src="img/gallery-04.jpg" alt="Image">
+								</picture>
+							</div>
+							<div class="swiper-slide">
+								<picture class="gallery__img">
+									<img src="img/gallery-05.jpg" alt="Image">
+								</picture>
+							</div>
+							<div class="swiper-slide">
+								<picture class="gallery__img">
+									<img src="img/gallery-06.jpg" alt="Image">
+								</picture>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="gallery__slider gallery__slider--bottom">
+					<div class="swiper">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<picture class="gallery__img">
+									<img src="img/gallery-04.jpg" alt="Image">
+								</picture>
+							</div>
+							<div class="swiper-slide">
+								<picture class="gallery__img">
+									<img src="img/gallery-05.jpg" alt="Image">
+								</picture>
+							</div>
+							<div class="swiper-slide">
+								<picture class="gallery__img">
+									<img src="img/gallery-06.jpg" alt="Image">
+								</picture>
+							</div>
+							<div class="swiper-slide">
+								<picture class="gallery__img">
+									<img src="img/gallery-07.jpg" alt="Image">
+								</picture>
+							</div>
+							<div class="swiper-slide">
+								<picture class="gallery__img">
+									<img src="img/gallery-08.jpg" alt="Image">
+								</picture>
+							</div>
+							<div class="swiper-slide">
+								<picture class="gallery__img">
+									<img src="img/gallery-09.jpg" alt="Image">
+								</picture>
+							</div>
+							<div class="swiper-slide">
+								<picture class="gallery__img">
+									<img src="img/gallery-02.jpg" alt="Image">
+								</picture>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- end of gallery -->
 		<!-- feedback -->
 		<section class="feedback" id="feedback">
 			<div class="container">
@@ -154,11 +248,11 @@
 					<p class="feedback__description">Оставьте свои данные, мы свяжемся с вами и обсудим все детали </p>
 					<form action="#" class="feedback-form feedback__form">
 						<div class="feedback-form__inner">
-							<input type="text" class="feedback-form__input input" placeholder="Ваше имя">
-							<input type="tel" class="feedback-form__input input" placeholder="Номер телефона">
+							<input type="text" class="feedback-form__input input" placeholder="Ваше имя" required>
+							<input type="tel" class="feedback-form__input input" placeholder="Номер телефона" data-inputmask="'mask': '+7 (999) 999-99-99'" required>
 						</div>
 						<div class="feedback-form__inner">
-							<textarea class="feedback-form__input textarea" placeholder="Ваше сообщение"></textarea>
+							<textarea class="feedback-form__input textarea" placeholder="Ваше сообщение" required></textarea>
 						</div>
 						<div class="feedback-form__bottom">
 							<p class="feedback-form__copyright">Нажимая кнопку «отправить», вы принимаете <a href="#">условия передачи персональных данных</a> и нашу <a href="#">политику конфиденциальности</a></p>
