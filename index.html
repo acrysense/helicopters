@@ -11,9 +11,28 @@
 	<link rel="stylesheet" href="css/app.min.css">
 </head>
 
-<body>
+<body class="scroll-disabled">
+	<!-- cursor -->
+	<div class="cursor cursor--hidden" id="cursor"></div>
+	<div class="cursor-border cursor-border--hidden" id="cursor-border"></div>
+	<!-- end of cursor -->
+	<!-- loader -->
+	<div class="loader" id="loader">
+		<div class="loader__block">
+			<svg class="loader__icon" width="31" height="71" viewBox="0 0 31 71" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M19.25 36.7048C23.3474 33.9409 26.25 27.0559 26.25 19C26.25 8.50659 21.3251 0 15.25 0C9.17487 0 4.25 8.50659 4.25 19C4.25 27.0559 7.15264 33.9409 11.25 36.7048V60L0.25 67V71L11.25 66H19.25L30.25 71V67L19.25 60V36.7048Z" fill="#E3A634" />
+			</svg>
+			<svg class="loader__icon loader__icon--rotate" width="92" height="92" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path opacity="0.1" d="M76.5651 34.8749C78.3207 39.6984 78.9098 44.869 78.2843 49.9638C77.6587 55.0586 75.8362 59.933 72.9658 64.1885L45.9999 45.9998L76.5651 34.8749Z" fill="#E3A634" />
+				<path opacity="0.1" d="M15.4349 57.1251C13.6793 52.3016 13.0902 47.131 13.7157 42.0362C14.3413 36.9414 16.1638 32.067 19.0342 27.8115L46.0001 46.0002L15.4349 57.1251Z" fill="#E3A634" />
+				<rect x="21.8105" y="21" width="69.784" height="3.62148" rx="1.81074" transform="rotate(45 21.8105 21)" fill="#E3A634" />
+				<rect width="69.784" height="3.62148" rx="1.81074" transform="matrix(-0.707107 0.707107 0.707107 0.707107 68.5947 21)" fill="#E3A634" />
+			</svg>
+		</div>
+	</div>
+	<!-- end of loader -->
 	<!-- header -->
-	<header class="header @@header" id="header" data-aos="fade-in">
+	<header class="header @@header" id="header" data-aos="fade-down" data-aos-delay="1000">
 		<div class="container">
 			<div class="header__wrapper">
 				<button class="hamburger" id="hamburger-toggle" aria-label="Меню">
@@ -72,17 +91,24 @@
 	</div>
 	<!-- end of mobile menu -->
 	<!-- wrapper -->
-	<div class="wrapper">
+	<div class="wrapper" data-aos="fade-in">
 		<!-- main -->
 		<section class="main" id="main">
 			<div class="container">
-				<div class="main__wrapper" style="background-image: url(img/main-bg.jpg);">
-					<h2 class="main__title">Вертолетные <br>экскурсионные <br>туры</h2>
-					<p class="main__description">Завораживающие туры на новейших вертолетах по сказочным красотам Республики Дагестан.</p>
-					<a href="#" class="main__btn btn">Выбрать маршрут</a>
+				<div class="main__wrapper">
+					<div class="main__overlay" data-aos="fade-in" data-aos-delay="2000"></div>
+					<video class="main__bg" width="100%" height="100%" loop muted autoplay playsinline>
+						<source src="/video/main-bg.webm" type="video/webm">
+						<source src="/video/main-bg.mov" type="video/mp4">
+					</video>
+					<div class="main__body" data-aos="fade-in" data-aos-delay="3000" data-aos-anchor="#header">
+						<h2 class="main__title">Вертолетные <br>экскурсионные <br>туры</h2>
+						<p class="main__description">Завораживающие туры на новейших вертолетах по сказочным красотам Республики Дагестан.</p>
+						<a href="#" class="main__btn btn">Выбрать маршрут</a>
+					</div>
 				</div>
-				<div class="main__inner">
-					<a href="#invest" class="back-to main__back">
+				<div class="main__inner" data-aos="fade-in" data-aos-delay="3000" data-aos-anchor="#header">
+					<a href="#invest" class="back-to main__back hoverable">
 						<span class="back-to__title">Загляните <br>за горизонт</span>
 						<svg class="back-to__icon">
 							<use xlink:href="img/sprite.svg#icon-arrow-bottom"></use>
@@ -118,395 +144,639 @@
 			</div>
 		</section>
 		<!-- end of main -->
-		<!-- invest -->
-		<section class="invest" id="invest">
-			<div class="container">
-				<div class="invest__wrapper">
-					<div class="invest__left">
-						<div class="invest__images">
-							<picture class="invest__img">
-								<img src="img/about-img-01.jpg" alt="Image">
-							</picture>
-							<picture class="invest__img">
-								<img src="img/about-img-02.jpg" alt="Image">
-							</picture>
-							<picture class="invest__img">
-								<img src="img/about-img-03.jpg" alt="Image">
-							</picture>
+		<!-- wrapper main -->
+		<div class="wrapper-main" data-aos="fade-in" data-aos-delay="3000" data-aos-anchor="#header">
+			<!-- invest -->
+			<section class="invest" id="invest">
+				<div class="container">
+					<div class="invest__wrapper">
+						<div class="invest__left" data-aos="fade-right">
+							<div class="invest__images">
+								<picture class="invest__img">
+									<img src="img/about-img-01.jpg" alt="Image">
+								</picture>
+								<picture class="invest__img">
+									<img src="img/about-img-02.jpg" alt="Image">
+								</picture>
+								<picture class="invest__img">
+									<img src="img/about-img-03.jpg" alt="Image">
+								</picture>
+							</div>
+						</div>
+						<div class="invest__right" data-aos="fade-left">
+							<h3 class="invest__title"><b>Инвестиции в эмоции –</b> это лучшие инвестиции в себя</h3>
+							<p class="invest__description">
+								Полет на вертолете - это увлекательный отдых и прекрасный способ <br>
+								не только получить необычные ощущения иэмоции, a еще и запомнить республику в ее лучших проявлениях и побывать у в уникальных местах, недоступных большинству путешественников
+								<br><br>
+								Любое мероприятие – свидание, экскурсия, корпоратив, день рождения или просто семейная прогулка – станут уникальными <br>
+								и подарят море эмоций.
+							</p>
+							<a href="#routes" class="back-to invest__back">
+								<span class="back-to__title">Выбрать <br>маршрут</span>
+								<svg class="back-to__icon">
+									<use xlink:href="img/sprite.svg#icon-arrow-bottom"></use>
+								</svg>
+							</a>
 						</div>
 					</div>
-					<div class="invest__right">
-						<h3 class="invest__title"><b>Инвестиции в эмоции –</b> это лучшие инвестиции в себя</h3>
-						<p class="invest__description">
-							Полет на вертолете - это увлекательный отдых и прекрасный способ <br>
-							не только получить необычные ощущения иэмоции, a еще и запомнить республику в ее лучших проявлениях и побывать у в уникальных местах, недоступных большинству путешественников
-							<br><br>
-							Любое мероприятие – свидание, экскурсия, корпоратив, день рождения или просто семейная прогулка – станут уникальными <br>
-							и подарят море эмоций.
-						</p>
-						<a href="#programs" class="back-to invest__back">
-							<span class="back-to__title">Выбрать <br>маршрут</span>
+				</div>
+			</section>
+			<!-- end of invest -->
+			<!-- routes -->
+			<section class="routes" id="routes">
+				<div class="container">
+					<div class="section-heading" data-aos="fade-up">
+						<h2 class="section-heading__title">Готовые экскурсионные программы</h2>
+						<p class="section-heading__description">Мы переосмыслили подход к отдыху на высоте и готовы принять мероприятие почти любых форматов – романтические свидания, групповые экскурсии, дни рождения или просто семейные прогулки. </p>
+					</div>
+					<div class="route-tabs">
+						<div class="routes__slider" data-aos="fade-up">
+							<div class="swiper">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<a href="#" class="routes__item" style="background-image: url(img/routes-01.jpg);">
+											<div class="routes__top">
+												<span class="routes__title">Маршрут 1</span>
+												<span class="routes__time">1 час</span>
+											</div>
+											<ul class="routes__list">
+												<li class="routes__list-item">Махачкала</li>
+												<li class="routes__list-item">Бархан Сарыкум</li>
+												<li class="routes__list-item">Чиркейское в/х</li>
+												<li class="routes__list-item">Сулакский каньон</li>
+												<li class="routes__list-item">Бархан Сарыкум</li>
+												<li class="routes__list-item">Чиркейское в/х</li>
+												<li class="routes__list-item">Сулакский каньон</li>
+											</ul>
+										</a>
+									</div>
+									<div class="swiper-slide">
+										<a href="#" class="routes__item" style="background-image: url(img/routes-02.jpg);">
+											<div class="routes__top">
+												<span class="routes__title">Маршрут 2</span>
+												<span class="routes__time">2 часа</span>
+											</div>
+											<ul class="routes__list">
+												<li class="routes__list-item">Чох</li>
+												<li class="routes__list-item">Гамсутль</li>
+												<li class="routes__list-item">Кегерское плато</li>
+												<li class="routes__list-item">Гуниб</li>
+												<li class="routes__list-item">Седло гора</li>
+												<li class="routes__list-item">Махачкала</li>
+												<li class="routes__list-item">Матлас + 4</li>
+											</ul>
+										</a>
+									</div>
+									<div class="swiper-slide">
+										<a href="#" class="routes__item" style="background-image: url(img/routes-03.jpg);">
+											<div class="routes__top">
+												<span class="routes__title">Маршрут 3</span>
+												<span class="routes__time">3 часа</span>
+											</div>
+											<ul class="routes__list">
+												<li class="routes__list-item">Гуниб</li>
+												<li class="routes__list-item">Гергебиль</li>
+												<li class="routes__list-item">Ирганай</li>
+												<li class="routes__list-item">Кизилюрт</li>
+												<li class="routes__list-item">Сулакский каньон</li>
+												<li class="routes__list-item">Бархан Сарыкум + 2</li>
+											</ul>
+										</a>
+									</div>
+									<div class="swiper-slide">
+										<a href="#" class="routes__item" style="background-image: url(img/routes-04.jpg);">
+											<div class="routes__top">
+												<span class="routes__title">Маршрут 4</span>
+												<span class="routes__time">1 час</span>
+											</div>
+											<ul class="routes__list">
+												<li class="routes__list-item">Буйнакск</li>
+												<li class="routes__list-item">Гимринская башня</li>
+												<li class="routes__list-item">Матлас</li>
+												<li class="routes__list-item">Ирганайское в/х</li>
+												<li class="routes__list-item">о. Мочох</li>
+												<li class="routes__list-item">Ахульго +1</li>
+											</ul>
+										</a>
+									</div>
+									<div class="swiper-slide">
+										<a href="#" class="routes__item" style="background-image: url(img/routes-05.jpg);">
+											<div class="routes__top">
+												<span class="routes__title">Маршрут 5</span>
+												<span class="routes__time">1 час</span>
+											</div>
+											<ul class="routes__list">
+												<li class="routes__list-item">Аймаки</li>
+												<li class="routes__list-item">Седло гора</li>
+												<li class="routes__list-item">Кахиб</li>
+												<li class="routes__list-item">Губден</li>
+												<li class="routes__list-item">Гоор</li>
+												<li class="routes__list-item">Тобот</li>
+												<li class="routes__list-item">Хунзахское плато + 2</li>
+											</ul>
+										</a>
+									</div>
+									<div class="swiper-slide">
+										<a href="#" class="routes__item" style="background-image: url(img/routes-06.jpg);">
+											<div class="routes__top">
+												<span class="routes__title">Маршрут 6</span>
+												<span class="routes__time">1 час</span>
+											</div>
+											<ul class="routes__list">
+												<li class="routes__list-item">Губден</li>
+												<li class="routes__list-item">Леваши</li>
+												<li class="routes__list-item">Чох</li>
+												<li class="routes__list-item">Гамсутль</li>
+												<li class="routes__list-item">Гуниб</li>
+												<li class="routes__list-item">Согратль</li>
+												<li class="routes__list-item">Ватан</li>
+												<li class="routes__list-item">Кегерское плато + 2</li>
+											</ul>
+										</a>
+									</div>
+									<div class="swiper-slide">
+										<a href="#" class="routes__item" style="background-image: url(img/routes-07.jpg);">
+											<div class="routes__top">
+												<span class="routes__title">Маршрут 7</span>
+												<span class="routes__time">2 часа</span>
+											</div>
+											<ul class="routes__list">
+												<li class="routes__list-item">Избербаш</li>
+												<li class="routes__list-item">Зидьян</li>
+												<li class="routes__list-item">Зизигский каньон</li>
+												<li class="routes__list-item">г. Гестинкиль</li>
+												<li class="routes__list-item">Куруш</li>
+												<li class="routes__list-item">г. Шалбуздаг + 7</li>
+											</ul>
+										</a>
+									</div>
+								</div>
+							</div>
+							<button class="swiper-button-next" aria-label="Далее">
+								<svg class="swiper-button-icon">
+									<use xlink:href="img/sprite.svg#icon-arrow-right"></use>
+								</svg>
+							</button>
+						</div>
+						<div class="route route-tabs__wrapper route-tabs__wrapper--active" data-aos="fade-up">
+							<div class="route__wrapper">
+								<div class="route__left">
+									<div class="route__body">
+										<ul class="route__list">
+											<li class="route__item">Махачкала (аэропорт)</li>
+											<li class="route__item">Бархан Сарыкум</li>
+											<li class="route__item">Чиркейское водохранилище</li>
+											<li class="route__item">Сулакский каньон</li>
+											<li class="route__item">Смотровая Сулакского каньона</li>
+											<li class="route__item">Махачкала (аэропорт)</li>
+										</ul>
+										<div class="route__block">
+											<div class="route__info">
+												<span class="route__elem">Время в полете — <span>1 час</span></span>
+												<span class="route__elem">Общее время — <span>2 часа</span></span>
+												<span class="route__elem">Высота — <span>до 2000 км</span></span>
+											</div>
+											<picture class="route__info-map">
+												<img src="img/info-map-01.png" alt="Image">
+											</picture>
+										</div>
+									</div>
+									<div class="route__controls route__controls--desktop">
+										<a href="#" class="route__btn btn">Оставить заявку</a>
+										<a href="#" class="route__btn btn btn--transparent">Подробнее о туре</a>
+									</div>
+								</div>
+								<div class="route__right">
+									<picture class="route__map">
+										<img src="img/route-map-01.svg" alt="Map">
+									</picture>
+								</div>
+							</div>
+							<div class="route__controls route__controls--mobile">
+								<a href="#" class="route__btn btn">Оставить заявку</a>
+								<a href="route.html" class="route__btn btn btn--transparent">Подробнее о туре</a>
+							</div>
+						</div>
+						<div class="route route-tabs__wrapper">
+							<div class="route__wrapper">
+								<div class="route__left">
+									<div class="route__body">
+										<ul class="route__list">
+											<li class="route__item">Махачкала (аэропорт)</li>
+											<li class="route__item">Бархан Сарыкум</li>
+											<li class="route__item">Чиркейское водохранилище</li>
+											<li class="route__item">Сулакский каньон</li>
+											<li class="route__item">Смотровая Сулакского каньона</li>
+											<li class="route__item">Махачкала (аэропорт)</li>
+										</ul>
+										<div class="route__block">
+											<div class="route__info">
+												<span class="route__elem">Время в полете — <span>1 час</span></span>
+												<span class="route__elem">Общее время — <span>2 часа</span></span>
+												<span class="route__elem">Высота — <span>до 2000 км</span></span>
+											</div>
+											<picture class="route__info-map">
+												<img src="img/info-map-02.png" alt="Image">
+											</picture>
+										</div>
+									</div>
+									<div class="route__controls route__controls--desktop">
+										<a href="#" class="route__btn btn">Оставить заявку</a>
+										<a href="#" class="route__btn btn btn--transparent">Подробнее о туре</a>
+									</div>
+								</div>
+								<div class="route__right">
+									<picture class="route__map">
+										<img src="img/route-map-02.svg" alt="Map">
+									</picture>
+								</div>
+							</div>
+							<div class="route__controls route__controls--mobile">
+								<a href="#" class="route__btn btn">Оставить заявку</a>
+								<a href="route.html" class="route__btn btn btn--transparent">Подробнее о туре</a>
+							</div>
+						</div>
+						<div class="route route-tabs__wrapper">
+							<div class="route__wrapper">
+								<div class="route__left">
+									<div class="route__body">
+										<ul class="route__list">
+											<li class="route__item">Махачкала (аэропорт)</li>
+											<li class="route__item">Бархан Сарыкум</li>
+											<li class="route__item">Чиркейское водохранилище</li>
+											<li class="route__item">Сулакский каньон</li>
+											<li class="route__item">Смотровая Сулакского каньона</li>
+											<li class="route__item">Махачкала (аэропорт)</li>
+											<li class="route__item">Смотровая Сулакского каньона</li>
+											<li class="route__item">Махачкала (аэропорт)</li>
+										</ul>
+										<div class="route__block">
+											<div class="route__info">
+												<span class="route__elem">Время в полете — <span>1 час</span></span>
+												<span class="route__elem">Общее время — <span>2 часа</span></span>
+												<span class="route__elem">Высота — <span>до 2000 км</span></span>
+											</div>
+											<picture class="route__info-map">
+												<img src="img/info-map-03.png" alt="Image">
+											</picture>
+										</div>
+									</div>
+									<div class="route__controls route__controls--desktop">
+										<a href="#" class="route__btn btn">Оставить заявку</a>
+										<a href="#" class="route__btn btn btn--transparent">Подробнее о туре</a>
+									</div>
+								</div>
+								<div class="route__right">
+									<picture class="route__map">
+										<img src="img/route-map-03.svg" alt="Map">
+									</picture>
+								</div>
+							</div>
+							<div class="route__controls route__controls--mobile">
+								<a href="#" class="route__btn btn">Оставить заявку</a>
+								<a href="route.html" class="route__btn btn btn--transparent">Подробнее о туре</a>
+							</div>
+						</div>
+						<div class="route route-tabs__wrapper">
+							<div class="route__wrapper">
+								<div class="route__left">
+									<div class="route__body">
+										<ul class="route__list">
+											<li class="route__item">Махачкала (аэропорт)</li>
+											<li class="route__item">Бархан Сарыкум</li>
+											<li class="route__item">Чиркейское водохранилище</li>
+											<li class="route__item">Сулакский каньон</li>
+											<li class="route__item">Смотровая Сулакского каньона</li>
+											<li class="route__item">Махачкала (аэропорт)</li>
+										</ul>
+										<div class="route__block">
+											<div class="route__info">
+												<span class="route__elem">Время в полете — <span>1 час</span></span>
+												<span class="route__elem">Общее время — <span>2 часа</span></span>
+												<span class="route__elem">Высота — <span>до 2000 км</span></span>
+											</div>
+											<picture class="route__info-map">
+												<img src="img/info-map-04.png" alt="Image">
+											</picture>
+										</div>
+									</div>
+									<div class="route__controls route__controls--desktop">
+										<a href="#" class="route__btn btn">Оставить заявку</a>
+										<a href="#" class="route__btn btn btn--transparent">Подробнее о туре</a>
+									</div>
+								</div>
+								<div class="route__right">
+									<picture class="route__map">
+										<img src="img/route-map-04.svg" alt="Map">
+									</picture>
+								</div>
+							</div>
+							<div class="route__controls route__controls--mobile">
+								<a href="#" class="route__btn btn">Оставить заявку</a>
+								<a href="route.html" class="route__btn btn btn--transparent">Подробнее о туре</a>
+							</div>
+						</div>
+						<div class="route route-tabs__wrapper">
+							<div class="route__wrapper">
+								<div class="route__left">
+									<div class="route__body">
+										<ul class="route__list">
+											<li class="route__item">Махачкала (аэропорт)</li>
+											<li class="route__item">Бархан Сарыкум</li>
+											<li class="route__item">Чиркейское водохранилище</li>
+											<li class="route__item">Сулакский каньон</li>
+											<li class="route__item">Смотровая Сулакского каньона</li>
+											<li class="route__item">Махачкала (аэропорт)</li>
+											<li class="route__item">Чиркейское водохранилище</li>
+											<li class="route__item">Сулакский каньон</li>
+											<li class="route__item">Смотровая Сулакского каньона</li>
+											<li class="route__item">Махачкала (аэропорт)</li>
+										</ul>
+										<div class="route__block">
+											<div class="route__info">
+												<span class="route__elem">Время в полете — <span>1 час</span></span>
+												<span class="route__elem">Общее время — <span>2 часа</span></span>
+												<span class="route__elem">Высота — <span>до 2000 км</span></span>
+											</div>
+											<picture class="route__info-map">
+												<img src="img/info-map-05.png" alt="Image">
+											</picture>
+										</div>
+									</div>
+									<div class="route__controls route__controls--desktop">
+										<a href="#" class="route__btn btn">Оставить заявку</a>
+										<a href="#" class="route__btn btn btn--transparent">Подробнее о туре</a>
+									</div>
+								</div>
+								<div class="route__right">
+									<picture class="route__map">
+										<img src="img/route-map-05.svg" alt="Map">
+									</picture>
+								</div>
+							</div>
+							<div class="route__controls route__controls--mobile">
+								<a href="#" class="route__btn btn">Оставить заявку</a>
+								<a href="route.html" class="route__btn btn btn--transparent">Подробнее о туре</a>
+							</div>
+						</div>
+						<div class="route route-tabs__wrapper">
+							<div class="route__wrapper">
+								<div class="route__left">
+									<div class="route__body">
+										<ul class="route__list">
+											<li class="route__item">Махачкала (аэропорт)</li>
+											<li class="route__item">Бархан Сарыкум</li>
+											<li class="route__item">Чиркейское водохранилище</li>
+											<li class="route__item">Сулакский каньон</li>
+											<li class="route__item">Смотровая Сулакского каньона</li>
+											<li class="route__item">Махачкала (аэропорт)</li>
+										</ul>
+										<div class="route__block">
+											<div class="route__info">
+												<span class="route__elem">Время в полете — <span>1 час</span></span>
+												<span class="route__elem">Общее время — <span>2 часа</span></span>
+												<span class="route__elem">Высота — <span>до 2000 км</span></span>
+											</div>
+											<picture class="route__info-map">
+												<img src="img/info-map-06.png" alt="Image">
+											</picture>
+										</div>
+									</div>
+									<div class="route__controls route__controls--desktop">
+										<a href="#" class="route__btn btn">Оставить заявку</a>
+										<a href="#" class="route__btn btn btn--transparent">Подробнее о туре</a>
+									</div>
+								</div>
+								<div class="route__right">
+									<picture class="route__map">
+										<img src="img/route-map-06.svg" alt="Map">
+									</picture>
+								</div>
+							</div>
+							<div class="route__controls route__controls--mobile">
+								<a href="#" class="route__btn btn">Оставить заявку</a>
+								<a href="route.html" class="route__btn btn btn--transparent">Подробнее о туре</a>
+							</div>
+						</div>
+						<div class="route route-tabs__wrapper">
+							<div class="route__wrapper">
+								<div class="route__left">
+									<div class="route__body">
+										<ul class="route__list">
+											<li class="route__item">Махачкала (аэропорт)</li>
+											<li class="route__item">Бархан Сарыкум</li>
+											<li class="route__item">Чиркейское водохранилище</li>
+											<li class="route__item">Сулакский каньон</li>
+											<li class="route__item">Смотровая Сулакского каньона</li>
+											<li class="route__item">Махачкала (аэропорт)</li>
+										</ul>
+										<div class="route__block">
+											<div class="route__info">
+												<span class="route__elem">Время в полете — <span>1 час</span></span>
+												<span class="route__elem">Общее время — <span>2 часа</span></span>
+												<span class="route__elem">Высота — <span>до 2000 км</span></span>
+											</div>
+											<picture class="route__info-map">
+												<img src="img/info-map-07.png" alt="Image">
+											</picture>
+										</div>
+									</div>
+									<div class="route__controls route__controls--desktop">
+										<a href="#" class="route__btn btn">Оставить заявку</a>
+										<a href="#" class="route__btn btn btn--transparent">Подробнее о туре</a>
+									</div>
+								</div>
+								<div class="route__right">
+									<picture class="route__map">
+										<img src="img/route-map-07.svg" alt="Map">
+									</picture>
+								</div>
+							</div>
+							<div class="route__controls route__controls--mobile">
+								<a href="#" class="route__btn btn">Оставить заявку</a>
+								<a href="route.html" class="route__btn btn btn--transparent">Подробнее о туре</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- end of routes -->
+			<!-- gallery -->
+			<section class="gallery" id="gallery">
+				<div class="container">
+					<div class="gallery__top" data-aos="fade-up">
+						<div class="section-heading">
+							<h2 class="section-heading__title">Наша аккаунт <br>в Instagram</h2>
+						</div>
+						<a href="#" class="back-to gallery__back" target="_blank">
+							<span class="back-to__title">Открыть <br>в Instagram</span>
 							<svg class="back-to__icon">
 								<use xlink:href="img/sprite.svg#icon-arrow-bottom"></use>
 							</svg>
 						</a>
 					</div>
-				</div>
-			</div>
-		</section>
-		<!-- end of invest -->
-		<!-- routes -->
-		<section class="routes" id="routes">
-			<div class="container">
-				<div class="section-heading">
-					<h2 class="section-heading__title">Готовые экскурсионные программы</h2>
-					<p class="section-heading__description">Мы переосмыслили подход к отдыху на высоте и готовы принять мероприятие почти любых форматов – романтические свидания, групповые экскурсии, дни рождения или просто семейные прогулки. </p>
-				</div>
-				<div class="routes__slider">
-					<div class="swiper">
-						<div class="swiper-wrapper">
-							<div class="swiper-slide">
-								<a href="route.html" class="routes__item" style="background-image: url(img/routes-01.jpg);">
-									<div class="routes__top">
-										<span class="routes__title">Маршрут 1</span>
-										<span class="routes__time">1 час</span>
-									</div>
-									<ul class="routes__list">
-										<li class="routes__list-item">Махачкала</li>
-										<li class="routes__list-item">Бархан Сарыкум</li>
-										<li class="routes__list-item">Чиркейское в/х</li>
-										<li class="routes__list-item">Сулакский каньон</li>
-									</ul>
-								</a>
-							</div>
-							<div class="swiper-slide">
-								<a href="route.html" class="routes__item" style="background-image: url(img/routes-02.jpg);">
-									<div class="routes__top">
-										<span class="routes__title">Маршрут 2</span>
-										<span class="routes__time">2 часа</span>
-									</div>
-									<ul class="routes__list">
-										<li class="routes__list-item">Чох</li>
-										<li class="routes__list-item">Гамсутль</li>
-										<li class="routes__list-item">Кегерское плато</li>
-										<li class="routes__list-item">Гуниб</li>
-										<li class="routes__list-item">Седло гора</li>
-										<li class="routes__list-item">Махачкала</li>
-										<li class="routes__list-item">Матлас + 4</li>
-									</ul>
-								</a>
-							</div>
-							<div class="swiper-slide">
-								<a href="route.html" class="routes__item" style="background-image: url(img/routes-03.jpg);">
-									<div class="routes__top">
-										<span class="routes__title">Маршрут 3</span>
-										<span class="routes__time">3 часа</span>
-									</div>
-									<ul class="routes__list">
-										<li class="routes__list-item">Гуниб</li>
-										<li class="routes__list-item">Гергебиль</li>
-										<li class="routes__list-item">Ирганай</li>
-										<li class="routes__list-item">Кизилюрт</li>
-										<li class="routes__list-item">Сулакский каньон</li>
-										<li class="routes__list-item">Бархан Сарыкум + 2</li>
-									</ul>
-								</a>
-							</div>
-							<div class="swiper-slide">
-								<a href="route.html" class="routes__item" style="background-image: url(img/routes-04.jpg);">
-									<div class="routes__top">
-										<span class="routes__title">Маршрут 4</span>
-										<span class="routes__time">1 час</span>
-									</div>
-									<ul class="routes__list">
-										<li class="routes__list-item">Буйнакск</li>
-										<li class="routes__list-item">Гимринская башня</li>
-										<li class="routes__list-item">Матлас</li>
-										<li class="routes__list-item">Ирганайское в/х</li>
-										<li class="routes__list-item">о. Мочох</li>
-										<li class="routes__list-item">Ахульго +1</li>
-									</ul>
-								</a>
-							</div>
-							<div class="swiper-slide">
-								<a href="route.html" class="routes__item" style="background-image: url(img/routes-05.jpg);">
-									<div class="routes__top">
-										<span class="routes__title">Маршрут 5</span>
-										<span class="routes__time">1 час</span>
-									</div>
-									<ul class="routes__list">
-										<li class="routes__list-item">Аймаки</li>
-										<li class="routes__list-item">Седло гора</li>
-										<li class="routes__list-item">Кахиб</li>
-										<li class="routes__list-item">Губден</li>
-										<li class="routes__list-item">Гоор</li>
-										<li class="routes__list-item">Тобот</li>
-										<li class="routes__list-item">Хунзахское плато + 2</li>
-									</ul>
-								</a>
-							</div>
-							<div class="swiper-slide">
-								<a href="route.html" class="routes__item" style="background-image: url(img/routes-06.jpg);">
-									<div class="routes__top">
-										<span class="routes__title">Маршрут 6</span>
-										<span class="routes__time">1 час</span>
-									</div>
-									<ul class="routes__list">
-										<li class="routes__list-item">Губден</li>
-										<li class="routes__list-item">Леваши</li>
-										<li class="routes__list-item">Чох</li>
-										<li class="routes__list-item">Гамсутль</li>
-										<li class="routes__list-item">Гуниб</li>
-										<li class="routes__list-item">Согратль</li>
-										<li class="routes__list-item">Ватан</li>
-										<li class="routes__list-item">Кегерское плато + 2</li>
-									</ul>
-								</a>
-							</div>
-							<div class="swiper-slide">
-								<a href="route.html" class="routes__item" style="background-image: url(img/routes-07.jpg);">
-									<div class="routes__top">
-										<span class="routes__title">Маршрут 7</span>
-										<span class="routes__time">2 часа</span>
-									</div>
-									<ul class="routes__list">
-										<li class="routes__list-item">Избербаш</li>
-										<li class="routes__list-item">Зидьян</li>
-										<li class="routes__list-item">Зизигский каньон</li>
-										<li class="routes__list-item">г. Гестинкиль</li>
-										<li class="routes__list-item">Куруш</li>
-										<li class="routes__list-item">г. Шалбуздаг + 7</li>
-									</ul>
-								</a>
-							</div>
+					<div class="marquee gallery__marque" data-aos="transform">
+						<div class="marquee__group">
+							<picture class="gallery__img">
+								<img src="img/gallery-01.jpg" alt="Image">
+							</picture>
+							<picture class="gallery__img">
+								<img src="img/gallery-02.jpg" alt="Image">
+							</picture>
+							<picture class="gallery__img">
+								<img src="img/gallery-03.jpg" alt="Image">
+							</picture>
+							<picture class="gallery__img">
+								<img src="img/gallery-04.jpg" alt="Image">
+							</picture>
+							<picture class="gallery__img">
+								<img src="img/gallery-05.jpg" alt="Image">
+							</picture>
 						</div>
-					</div>
-					<button class="swiper-button-next" aria-label="Далее">
-						<svg class="swiper-button-icon">
-							<use xlink:href="img/sprite.svg#icon-arrow-right"></use>
-						</svg>
-					</button>
-				</div>
-				<div class="route">
-					<div class="route__wrapper">
-						<div class="route__left">
-							<div class="route__body">
-								<ul class="route__list">
-									<li class="route__item">Махачкала (аэропорт)</li>
-									<li class="route__item">Бархан Сарыкум</li>
-									<li class="route__item">Чиркейское водохранилище</li>
-									<li class="route__item">Сулакский каньон</li>
-									<li class="route__item">Смотровая Сулакского каньона</li>
-									<li class="route__item">Махачкала (аэропорт)</li>
-								</ul>
-								<div class="route__block">
-									<div class="route__info">
-										<span class="route__elem">Время в полете — <span>1 час</span></span>
-										<span class="route__elem">Общее время — <span>2 часа</span></span>
-										<span class="route__elem">Высота — <span>до 2000 км</span></span>
-									</div>
-									<picture class="route__info-map">
-										<img src="img/info-map-01.png" alt="Image">
-									</picture>
-								</div>
-							</div>
-							<div class="route__controls route__controls--desktop">
-								<a href="#" class="route__btn btn">Оставить заявку</a>
-								<a href="#" class="route__btn btn btn--transparent">Подробнее о туре</a>
-							</div>
-						</div>
-						<div class="route__right">
-							<picture class="route__map">
-								<img src="img/route-map-01.svg" alt="Map">
+						<div aria-hidden="true" class="marquee__group">
+							<picture class="gallery__img">
+								<img src="img/gallery-01.jpg" alt="Image">
+							</picture>
+							<picture class="gallery__img">
+								<img src="img/gallery-02.jpg" alt="Image">
+							</picture>
+							<picture class="gallery__img">
+								<img src="img/gallery-03.jpg" alt="Image">
+							</picture>
+							<picture class="gallery__img">
+								<img src="img/gallery-04.jpg" alt="Image">
+							</picture>
+							<picture class="gallery__img">
+								<img src="img/gallery-05.jpg" alt="Image">
 							</picture>
 						</div>
 					</div>
-					<div class="route__controls route__controls--mobile">
-						<a href="#" class="route__btn btn">Оставить заявку</a>
-						<a href="route.html" class="route__btn btn btn--transparent">Подробнее о туре</a>
+					<div class="marquee marquee--reverse gallery__marque" data-aos="transform-reverse">
+						<div class="marquee__group">
+							<picture class="gallery__img">
+								<img src="img/gallery-06.jpg" alt="Image">
+							</picture>
+							<picture class="gallery__img">
+								<img src="img/gallery-07.jpg" alt="Image">
+							</picture>
+							<picture class="gallery__img">
+								<img src="img/gallery-08.jpg" alt="Image">
+							</picture>
+							<picture class="gallery__img">
+								<img src="img/gallery-09.jpg" alt="Image">
+							</picture>
+							<picture class="gallery__img">
+								<img src="img/gallery-01.jpg" alt="Image">
+							</picture>
+						</div>
+						<div aria-hidden="true" class="marquee__group">
+							<picture class="gallery__img">
+								<img src="img/gallery-06.jpg" alt="Image">
+							</picture>
+							<picture class="gallery__img">
+								<img src="img/gallery-07.jpg" alt="Image">
+							</picture>
+							<picture class="gallery__img">
+								<img src="img/gallery-08.jpg" alt="Image">
+							</picture>
+							<picture class="gallery__img">
+								<img src="img/gallery-09.jpg" alt="Image">
+							</picture>
+							<picture class="gallery__img">
+								<img src="img/gallery-01.jpg" alt="Image">
+							</picture>
+						</div>
 					</div>
 				</div>
-			</div>
-		</section>
-		<!-- end of routes -->
-		<!-- gallery -->
-		<section class="gallery" id="gallery">
-			<div class="container">
-				<div class="gallery__top">
-					<div class="section-heading">
-						<h2 class="section-heading__title">Наша аккаунт <br>в Instagram</h2>
+			</section>
+			<!-- end of gallery -->
+			<!-- feedback -->
+			<section class="feedback" id="feedback" data-aos="fade-in">
+				<div class="container">
+					<div class="feedback__wrapper" data-aos="fade-left">
+						<h2 class="feedback__title">Отправляйтесь за горизонт на комфортном вертолете </h2>
+						<p class="feedback__description">Оставьте свои данные, мы свяжемся с вами и обсудим все детали </p>
+						<form action="#" class="feedback-form feedback__form">
+							<div class="feedback-form__inner">
+								<input type="text" class="feedback-form__input input" placeholder="Ваше имя" required>
+								<input type="tel" class="feedback-form__input input" placeholder="Номер телефона" data-inputmask="'mask': '+7 (999) 999-99-99'" required>
+							</div>
+							<div class="feedback-form__inner">
+								<textarea class="feedback-form__input textarea" placeholder="Ваше сообщение" required></textarea>
+							</div>
+							<div class="feedback-form__bottom">
+								<p class="feedback-form__copyright">Нажимая кнопку «отправить», вы принимаете <a href="#">условия передачи персональных данных</a> и нашу <a href="#">политику конфиденциальности</a></p>
+								<button class="feedback-form__btn btn">Отправить</button>
+							</div>
+						</form>
 					</div>
-					<a href="#" class="back-to gallery__back" target="_blank">
-						<span class="back-to__title">Открыть <br>в Instagram</span>
-						<svg class="back-to__icon">
-							<use xlink:href="img/sprite.svg#icon-arrow-bottom"></use>
-						</svg>
-					</a>
 				</div>
-				<div class="gallery__slider gallery__slider--top">
-					<div class="swiper">
-						<div class="swiper-wrapper">
-							<div class="swiper-slide">
-								<picture class="gallery__img">
-									<img src="img/gallery-01.jpg" alt="Image">
-								</picture>
-							</div>
-							<div class="swiper-slide">
-								<picture class="gallery__img">
-									<img src="img/gallery-02.jpg" alt="Image">
-								</picture>
-							</div>
-							<div class="swiper-slide">
-								<picture class="gallery__img">
-									<img src="img/gallery-03.jpg" alt="Image">
-								</picture>
-							</div>
-							<div class="swiper-slide">
-								<picture class="gallery__img">
-									<img src="img/gallery-04.jpg" alt="Image">
-								</picture>
-							</div>
-							<div class="swiper-slide">
-								<picture class="gallery__img">
-									<img src="img/gallery-05.jpg" alt="Image">
-								</picture>
-							</div>
-							<div class="swiper-slide">
-								<picture class="gallery__img">
-									<img src="img/gallery-06.jpg" alt="Image">
-								</picture>
+			</section>
+			<!-- end of feedback -->
+			<!-- footer -->
+			<footer class="footer" id="footer" data-aos="fade-in" data-aos-anchor="#footer">
+				<div class="container">
+					<div class="footer__wrapper">
+						<div class="footer__block">
+							<span class="footer__help">Email</span>
+							<a href="#" class="footer__link">polet.travelcompany@gmail.com</a>
+						</div>
+						<div class="footer__block">
+							<span class="footer__help">Телефон</span>
+							<a href="tel:89633372222" class="footer__link">8 (963) 337-22-22</a>
+						</div>
+						<div class="footer__block">
+							<span class="footer__help">Адрес</span>
+							<address class="footer__link">Дагестан, Махачкала, д.1 офис 1</address>
+						</div>
+						<a href="#header" class="back-to footer__back">
+							<span class="back-to__title">Вернуться наверх</span>
+							<svg class="back-to__icon">
+								<use xlink:href="img/sprite.svg#icon-arrow-top"></use>
+							</svg>
+						</a>
+					</div>
+					<div class="footer__wrapper footer__wrapper--bottom">
+						<div class="footer__block">
+							<p class="footer__copyright">© Полет 2022 | Все права защищены</p>
+						</div>
+						<div class="footer__block">
+							<a href="#" class="footer__info">Политика конфиденциальности</a>
+						</div>
+						<div class="footer__block">
+							<div class="c-socials footer__socials">
+								<ul class="c-socials__list">
+									<li class="c-socials__item">
+										<a href="#" class="c-socials__link">
+											<svg class="c-socials__icon">
+												<use xlink:href="img/sprite.svg#icon-telegram"></use>
+											</svg>
+										</a>
+									</li>
+									<li class="c-socials__item">
+										<a href="#" class="c-socials__link">
+											<svg class="c-socials__icon">
+												<use xlink:href="img/sprite.svg#icon-vk"></use>
+											</svg>
+										</a>
+									</li>
+									<li class="c-socials__item">
+										<a href="#" class="c-socials__link">
+											<svg class="c-socials__icon">
+												<use xlink:href="img/sprite.svg#icon-instagram"></use>
+											</svg>
+										</a>
+									</li>
+								</ul>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="gallery__slider gallery__slider--bottom">
-					<div class="swiper">
-						<div class="swiper-wrapper">
-							<div class="swiper-slide">
-								<picture class="gallery__img">
-									<img src="img/gallery-04.jpg" alt="Image">
-								</picture>
-							</div>
-							<div class="swiper-slide">
-								<picture class="gallery__img">
-									<img src="img/gallery-05.jpg" alt="Image">
-								</picture>
-							</div>
-							<div class="swiper-slide">
-								<picture class="gallery__img">
-									<img src="img/gallery-06.jpg" alt="Image">
-								</picture>
-							</div>
-							<div class="swiper-slide">
-								<picture class="gallery__img">
-									<img src="img/gallery-07.jpg" alt="Image">
-								</picture>
-							</div>
-							<div class="swiper-slide">
-								<picture class="gallery__img">
-									<img src="img/gallery-08.jpg" alt="Image">
-								</picture>
-							</div>
-							<div class="swiper-slide">
-								<picture class="gallery__img">
-									<img src="img/gallery-09.jpg" alt="Image">
-								</picture>
-							</div>
-							<div class="swiper-slide">
-								<picture class="gallery__img">
-									<img src="img/gallery-02.jpg" alt="Image">
-								</picture>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- end of gallery -->
-		<!-- feedback -->
-		<section class="feedback" id="feedback">
-			<div class="container">
-				<div class="feedback__wrapper">
-					<h2 class="feedback__title">Отправляйтесь за горизонт на комфортном вертолете </h2>
-					<p class="feedback__description">Оставьте свои данные, мы свяжемся с вами и обсудим все детали </p>
-					<form action="#" class="feedback-form feedback__form">
-						<div class="feedback-form__inner">
-							<input type="text" class="feedback-form__input input" placeholder="Ваше имя" required>
-							<input type="tel" class="feedback-form__input input" placeholder="Номер телефона" data-inputmask="'mask': '+7 (999) 999-99-99'" required>
-						</div>
-						<div class="feedback-form__inner">
-							<textarea class="feedback-form__input textarea" placeholder="Ваше сообщение" required></textarea>
-						</div>
-						<div class="feedback-form__bottom">
-							<p class="feedback-form__copyright">Нажимая кнопку «отправить», вы принимаете <a href="#">условия передачи персональных данных</a> и нашу <a href="#">политику конфиденциальности</a></p>
-							<button class="feedback-form__btn btn">Отправить</button>
-						</div>
-					</form>
-				</div>
-			</div>
-		</section>
-		<!-- end of feedback -->
-		<!-- footer -->
-		<footer class="footer" id="footer">
-			<div class="container">
-				<div class="footer__wrapper">
-					<div class="footer__block">
-						<span class="footer__help">Email</span>
-						<a href="#" class="footer__link">polet.travelcompany@gmail.com</a>
-					</div>
-					<div class="footer__block">
-						<span class="footer__help">Телефон</span>
-						<a href="tel:89633372222" class="footer__link">8 (963) 337-22-22</a>
-					</div>
-					<div class="footer__block">
-						<span class="footer__help">Адрес</span>
-						<address class="footer__link">Дагестан, Махачкала, д.1 офис 1</address>
-					</div>
-					<a href="#header" class="back-to footer__back">
-						<span class="back-to__title">Вернуться наверх</span>
-						<svg class="back-to__icon">
-							<use xlink:href="img/sprite.svg#icon-arrow-top"></use>
-						</svg>
-					</a>
-				</div>
-				<div class="footer__wrapper footer__wrapper--bottom">
-					<div class="footer__block">
-						<p class="footer__copyright">© Полет 2022 | Все права защищены</p>
-					</div>
-					<div class="footer__block">
-						<a href="#" class="footer__info">Политика конфиденциальности</a>
-					</div>
-					<div class="footer__block">
-						<div class="c-socials footer__socials">
-							<ul class="c-socials__list">
-								<li class="c-socials__item">
-									<a href="#" class="c-socials__link">
-										<svg class="c-socials__icon">
-											<use xlink:href="img/sprite.svg#icon-telegram"></use>
-										</svg>
-									</a>
-								</li>
-								<li class="c-socials__item">
-									<a href="#" class="c-socials__link">
-										<svg class="c-socials__icon">
-											<use xlink:href="img/sprite.svg#icon-vk"></use>
-										</svg>
-									</a>
-								</li>
-								<li class="c-socials__item">
-									<a href="#" class="c-socials__link">
-										<svg class="c-socials__icon">
-											<use xlink:href="img/sprite.svg#icon-instagram"></use>
-										</svg>
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</footer>
-		<!-- end of footer -->
+			</footer>
+			<!-- end of footer -->
+		</div>
+		<!-- end of wrapper main -->
 	</div>
 	<!-- end of wrapper -->
 	<!-- scripts -->
